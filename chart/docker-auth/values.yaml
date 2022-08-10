@@ -22,6 +22,11 @@ secret:
       key: ""
 configmap:
   data:
+    server:
+      net: ""
+      path_prefix: ""
+      real_ip_header: ""
+      real_ip_pos: ""
     token:
       issuer: "Acme auth server"
       expiration: 900
@@ -37,6 +42,20 @@ configmap:
       - match: {account: "test"}
         actions: ["pull"]
         comment: "User \"test\" can pull stuff."
+    google_auth: {}
+    github_auth: {}
+    oidc_auth: {}
+    gitlab_auth: {}
+    ldap_auth: {}
+    mongo_auth: {}
+    xorm_auth: {}
+    ext_auth: {}
+    plugin_authn: {}
+    acl_mongo: {}
+    acl_xorm: {}
+    casbin_authz: {}
+    ext_authz: {}
+    plugin_authz: {}
 
 nameOverride: ""
 fullnameOverride: ""
@@ -48,6 +67,7 @@ service:
 
 ingress:
   enabled: true
+  ingressClass: ""
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"

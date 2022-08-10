@@ -6,6 +6,18 @@ data:
   auth_config.yml: |
     server:
       addr: ":{{ .Values.service.targetPort }}"
+{{- if .Values.configmap.data.server.net }}
+      net: {{ .Values.configmap.data.server.net }}
+{{- end }}
+{{- if .Values.configmap.data.server.path_prefix }}
+      path_prefix: {{ .Values.configmap.data.server.path_prefix }}
+{{- end }}
+{{- if .Values.configmap.data.server.real_ip_header }}
+      real_ip_header: {{ .Values.configmap.data.server.real_ip_header }}
+{{- end }}
+{{- if .Values.configmap.data.server.real_ip_pos }}
+      real_ip_pos: {{ .Values.configmap.data.server.real_ip_pos }}
+{{- end }}
     token:
       issuer: "{{ .Values.configmap.data.token.issuer }}"  # Must match issuer in the Registry config.
       expiration: {{ .Values.configmap.data.token.expiration }}
@@ -20,3 +32,73 @@ data:
       {{ .Values.configmap.data.users | toYaml | nindent 6 }}
     acl:
       {{ .Values.configmap.data.acl | toYaml | nindent 6 }}
+
+{{- if .Values.configmap.data.google_auth }}
+google_auth:
+  {{ .Values.configmap.data.google_auth | toYaml | nindent 2 }}
+{{- end }}
+
+{{- if .Values.configmap.data.github_auth }}
+github_auth:
+  {{ .Values.configmap.data.github_auth | toYaml | nindent 2 }}
+{{- end }}
+
+{{- if .Values.configmap.data.oidc_auth }}
+oidc_auth:
+  {{ .Values.configmap.data.oidc_auth | toYaml | nindent 2 }}
+{{- end }}
+
+{{- if .Values.configmap.data.gitlab_auth }}
+gitlab_auth:
+  {{ .Values.configmap.data.gitlab_auth | toYaml | nindent 2 }}
+{{- end }}
+
+{{- if .Values.configmap.data.ldap_auth }}
+ldap_auth:
+  {{ .Values.configmap.data.ldap_auth | toYaml | nindent 2 }}
+{{- end }}
+
+{{- if .Values.configmap.data.mongo_auth }}
+mongo_auth:
+  {{ .Values.configmap.data.mongo_auth | toYaml | nindent 2 }}
+{{- end }}
+
+{{- if .Values.configmap.data.xorm_auth }}
+xorm_auth:
+  {{ .Values.configmap.data.xorm_auth | toYaml | nindent 2 }}
+{{- end }}
+
+{{- if .Values.configmap.data.ext_auth }}
+ext_auth:
+  {{ .Values.configmap.data.ext_auth | toYaml | nindent 2 }}
+{{- end }}
+
+{{- if .Values.configmap.data.plugin_authn }}
+plugin_authn:
+  {{ .Values.configmap.data.plugin_authn | toYaml | nindent 2 }}
+{{- end }}
+
+{{- if .Values.configmap.data.acl_mongo }}
+acl_mongo:
+  {{ .Values.configmap.data.acl_mongo | toYaml | nindent 2 }}
+{{- end }}
+
+{{- if .Values.configmap.data.acl_xorm }}
+acl_xorm:
+  {{ .Values.configmap.data.acl_xorm | toYaml | nindent 2 }}
+{{- end }}
+
+{{- if .Values.configmap.data.casbin_authz }}
+casbin_authz:
+  {{ .Values.configmap.data.casbin_authz | toYaml | nindent 2 }}
+{{- end }}
+
+{{- if .Values.configmap.data.ext_authz }}
+ext_authz:
+  {{ .Values.configmap.data.ext_authz | toYaml | nindent 2 }}
+{{- end }}
+
+{{- if .Values.configmap.data.plugin_authz }}
+plugin_authz:
+  {{ .Values.configmap.data.plugin_authz | toYaml | nindent 2 }}
+{{- end }}
