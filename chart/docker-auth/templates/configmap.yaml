@@ -34,71 +34,71 @@ data:
       {{ .Values.configmap.data.acl | toYaml | nindent 6 }}
 
 {{- if .Values.configmap.data.google_auth }}
-google_auth:
-  {{ .Values.configmap.data.google_auth | toYaml | nindent 2 }}
+    google_auth:
+      {{ .Values.configmap.data.google_auth | toYaml | nindent 6 }}
 {{- end }}
 
 {{- if .Values.configmap.data.github_auth }}
-github_auth:
-  {{ .Values.configmap.data.github_auth | toYaml | nindent 2 }}
+    github_auth:
+      {{ .Values.configmap.data.github_auth | toYaml | nindent 6 }}
 {{- end }}
 
 {{- if .Values.configmap.data.oidc_auth }}
-oidc_auth:
-  {{ .Values.configmap.data.oidc_auth | toYaml | nindent 2 }}
+    oidc_auth:
+      {{ .Values.configmap.data.oidc_auth | toYaml | nindent 6 }}
 {{- end }}
 
 {{- if .Values.configmap.data.gitlab_auth }}
-gitlab_auth:
-  {{ .Values.configmap.data.gitlab_auth | toYaml | nindent 2 }}
+    gitlab_auth:
+      {{ .Values.configmap.data.gitlab_auth | toYaml | nindent 6 }}
 {{- end }}
 
 {{- if .Values.configmap.data.ldap_auth }}
-ldap_auth:
-  {{ .Values.configmap.data.ldap_auth | toYaml | nindent 2 }}
+    ldap_auth:
+      {{ .Values.configmap.data.ldap_auth | toYaml | nindent 6 }}
 {{- end }}
 
 {{- if .Values.configmap.data.mongo_auth }}
-mongo_auth:
-  {{ .Values.configmap.data.mongo_auth | toYaml | nindent 2 }}
+    mongo_auth:
+      {{ .Values.configmap.data.mongo_auth | toYaml | nindent 6 }}
 {{- end }}
 
 {{- if .Values.configmap.data.xorm_auth }}
-xorm_auth:
-  {{ .Values.configmap.data.xorm_auth | toYaml | nindent 2 }}
+    xorm_auth:
+      {{ .Values.configmap.data.xorm_auth | toYaml | nindent 6 }}
 {{- end }}
 
 {{- if .Values.configmap.data.ext_auth }}
-ext_auth:
-  {{ .Values.configmap.data.ext_auth | toYaml | nindent 2 }}
+    ext_auth:
+      {{ .Values.configmap.data.ext_auth | toYaml | nindent 6 }}
 {{- end }}
 
 {{- if .Values.configmap.data.plugin_authn }}
-plugin_authn:
-  {{ .Values.configmap.data.plugin_authn | toYaml | nindent 2 }}
+    plugin_authn:
+      {{ .Values.configmap.data.plugin_authn | toYaml | nindent 6 }}
 {{- end }}
 
 {{- if .Values.configmap.data.acl_mongo }}
-acl_mongo:
-  {{ .Values.configmap.data.acl_mongo | toYaml | nindent 2 }}
+    acl_mongo:
+      {{ .Values.configmap.data.acl_mongo | toYaml | nindent 6 }}
 {{- end }}
 
 {{- if .Values.configmap.data.acl_xorm }}
-acl_xorm:
-  {{ .Values.configmap.data.acl_xorm | toYaml | nindent 2 }}
+    acl_xorm:
+      {{ .Values.configmap.data.acl_xorm | toYaml | nindent 6 }}
 {{- end }}
 
 {{- if .Values.configmap.data.casbin_authz }}
-casbin_authz:
-  {{ .Values.configmap.data.casbin_authz | toYaml | nindent 2 }}
+    casbin_authz:
+      {{ .Values.configmap.data.casbin_authz | toYaml | nindent 6 }}
 {{- end }}
 
 {{- if .Values.configmap.data.ext_authz }}
-ext_authz:
-  {{ .Values.configmap.data.ext_authz | toYaml | nindent 2 }}
+    ext_authz:
+      {{ .Values.configmap.data.ext_authz | toYaml | nindent 6 }}
 {{- end }}
 
 {{- if .Values.configmap.data.plugin_authz }}
-plugin_authz:
-  {{ .Values.configmap.data.plugin_authz | toYaml | nindent 2 }}
+    plugin_authz:
+      {{ .Values.configmap.data.plugin_authz | toYaml | nindent 6 }}
 {{- end }}
